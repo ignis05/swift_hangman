@@ -34,17 +34,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yru-kz-xhq">
-                                <rect key="frame" x="0.0" y="112" width="414" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yru-kz-xhq">
+                                <rect key="frame" x="47" y="104" width="320" height="216"/>
                             </pickerView>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5wF-TC-7On">
-                                <rect key="frame" x="0.0" y="373" width="414" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5wF-TC-7On">
+                                <rect key="frame" x="47" y="340" width="320" height="216"/>
                             </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWw-kT-xud">
-                                <rect key="frame" x="190" y="597" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWw-kT-xud">
+                                <rect key="frame" x="182" y="576" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="vsp-bb-EvH"/>
+                                    <constraint firstAttribute="height" constant="50" id="yRp-Gi-ZOg"/>
+                                </constraints>
                                 <state key="normal" title="Start"/>
                                 <connections>
                                     <segue destination="3V2-DJ-Dxj" kind="show" id="I4z-Pe-vHR"/>
@@ -52,6 +53,14 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5wF-TC-7On" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="82T-d4-ZAM"/>
+                            <constraint firstItem="5wF-TC-7On" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Cz2-Qb-c3t"/>
+                            <constraint firstItem="yru-kz-xhq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="S6i-e9-bso"/>
+                            <constraint firstItem="5wF-TC-7On" firstAttribute="top" secondItem="yru-kz-xhq" secondAttribute="bottom" constant="20" id="T5y-hh-XBv"/>
+                            <constraint firstItem="sWw-kT-xud" firstAttribute="top" secondItem="5wF-TC-7On" secondAttribute="bottom" constant="20" id="UQk-T1-W9u"/>
+                            <constraint firstItem="sWw-kT-xud" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nJQ-iP-W49"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="jDN-uQ-zMJ"/>
@@ -71,9 +80,32 @@
                     <view key="view" contentMode="scaleToFill" id="uRy-mz-NkC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fa-Pc-ZNY">
+                                <rect key="frame" x="47" y="105" width="71" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Word" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doJ-EV-1ey">
+                                <rect key="frame" x="186.5" y="437.5" width="41" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="doJ-EV-1ey" firstAttribute="centerY" secondItem="uRy-mz-NkC" secondAttribute="centerY" id="86J-7G-Lu5"/>
+                            <constraint firstItem="doJ-EV-1ey" firstAttribute="centerX" secondItem="uRy-mz-NkC" secondAttribute="centerX" id="Qh1-Th-8iD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="W56-X8-cN4"/>
                     </view>
+                    <connections>
+                        <outlet property="categoryLabel" destination="6fa-Pc-ZNY" id="FzQ-Ue-JI8"/>
+                        <outlet property="wordLabel" destination="doJ-EV-1ey" id="Pio-0f-wCX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="paN-T9-2QP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

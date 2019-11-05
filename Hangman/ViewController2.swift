@@ -15,6 +15,11 @@ class ViewController2: UIViewController {
     var pickerData: [String: Array<String>] = [:]
     var cat:String!
     var subcat:String!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var wordLabel: UILabel!
+    
+    var keyword = "OKOŃ"
+    var guessed:Array<Character> = []
     
 
     override func viewDidLoad() {
@@ -23,9 +28,26 @@ class ViewController2: UIViewController {
         cat = Array(pickerData.keys)[selected1]
         subcat = pickerData[cat]![selected2]
         
-        print(cat)
-        print(subcat)
+        categoryLabel.text = cat + " - " + subcat!
+        categoryLabel.sizeToFit()
+        
+        
+        updateDisplay()
         // Do any additional setup after loading the view.
+    }
+    
+    func updateDisplay(){
+        var string = ""
+        for char in keyword {
+            if(guessed.contains(char)){
+                string += String(char)
+            }
+            else{
+                string += "_"
+            }
+        }
+        wordLabel.text = string
+        wordLabel.sizeToFit()
     }
     
 
