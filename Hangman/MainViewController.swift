@@ -20,7 +20,7 @@ class MainViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDat
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if(pickerView == picker1){
-        return pickerData.count
+            return pickerData.count
         }
         else {
             let key = Array(pickerData.keys)[picker1.selectedRow(inComponent: 0)]
@@ -58,6 +58,12 @@ class MainViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDat
         // Do any additional setup after loading the view.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination as! ViewController2
+        dest.selected1 = picker1.selectedRow(inComponent: 0)
+        dest.selected2 = picker2.selectedRow(inComponent: 0)
+        dest.pickerData = pickerData
+    }
     
 
     /*

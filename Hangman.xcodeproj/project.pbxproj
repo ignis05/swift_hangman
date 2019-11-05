@@ -15,6 +15,7 @@
 		ABCB291E2371A29700E3C40A /* HangmanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCB291D2371A29700E3C40A /* HangmanTests.swift */; };
 		ABCB29292371A29700E3C40A /* HangmanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCB29282371A29700E3C40A /* HangmanUITests.swift */; };
 		ABCB29372371A43700E3C40A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCB29362371A43700E3C40A /* MainViewController.swift */; };
+		ABCB29392371B3EB00E3C40A /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCB29382371B3EB00E3C40A /* ViewController2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		ABCB29282371A29700E3C40A /* HangmanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangmanUITests.swift; sourceTree = "<group>"; };
 		ABCB292A2371A29700E3C40A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABCB29362371A43700E3C40A /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		ABCB29382371B3EB00E3C40A /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				ABCB29112371A29700E3C40A /* LaunchScreen.storyboard */,
 				ABCB29142371A29700E3C40A /* Info.plist */,
 				ABCB29362371A43700E3C40A /* MainViewController.swift */,
+				ABCB29382371B3EB00E3C40A /* ViewController2.swift */,
 			);
 			path = Hangman;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABCB29372371A43700E3C40A /* MainViewController.swift in Sources */,
+				ABCB29392371B3EB00E3C40A /* ViewController2.swift in Sources */,
 				ABCB290B2371A29600E3C40A /* ViewController.swift in Sources */,
 				ABCB29092371A29600E3C40A /* AppDelegate.swift in Sources */,
 			);
