@@ -9,22 +9,43 @@
 import UIKit
 
 class MainViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDataSource {
+    @IBOutlet weak var picker1: UIPickerView!
+    @IBOutlet weak var picker2: UIPickerView!
+    
+    var pickerData: [String: Array<String>] = [:]
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if(pickerView == picker1){
         return pickerData.count
+        }
+        else {
+            let key = Array(pickerData.keys)[picker1.selectedRow(inComponent: 0)]
+            return pickerData[key]!.count
+        }
+
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int)-> String?{
-        return Array(pickerData.keys)[row]
+        if(pickerView == picker1){
+            return Array(pickerData.keys)[row]
+        }
+        else {
+            let key = Array(pickerData.keys)[picker1.selectedRow(inComponent: 0)]
+            return pickerData[key]![row]
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if(pickerView == picker1){
+            picker2.reloadAllComponents()
+        }
     }
 
-    @IBOutlet weak var picker1: UIPickerView!
-    
-    var pickerData: [String: Array<String>] = [:]
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +53,8 @@ class MainViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDat
         
         self.picker1.delegate = self
         self.picker1.dataSource = self
+        self.picker2.delegate = self
+        self.picker2.dataSource = self
         // Do any additional setup after loading the view.
     }
     
