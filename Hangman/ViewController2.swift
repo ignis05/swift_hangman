@@ -33,6 +33,7 @@ class ViewController2: UIViewController,UITextFieldDelegate {
         categoryLabel.sizeToFit()
         
         input.delegate = self
+        generateButtons()
         updateDisplay()
         // Do any additional setup after loading the view.
     }
@@ -43,6 +44,19 @@ class ViewController2: UIViewController,UITextFieldDelegate {
         print(string)
         textField.deleteBackward()
         return true
+    }
+    
+    func generateButtons(){
+        for i in 1...6{
+            let button : UIButton = UIButton()
+            let img = UIImage(named : "\(i).jpg")
+            let xd = (i-1) % 3
+            let xdd = Int(floor(Double(i-1)/3))
+            button.frame = CGRect(x:100 + 100*xd, y:300 + 100*xdd, width: 100, height: 100) // rozmiar i punkt wstwienia
+            button.tag = 12 //mozna dodac liczbowy tag
+            button.setBackgroundImage(img, for: UIControl.State.normal) // dodanie tła
+            self.view.addSubview(button) //dodanie buttona do widoku
+        }
     }
     
     
