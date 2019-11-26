@@ -49,8 +49,14 @@ class ViewController2: UIViewController,UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {   //delegate method
         let x:String = textField.text!
         print(x)
+        makeGuess(x:Array(x.uppercased())[0])
         textField.deleteBackward()
         return false
+    }
+    
+    func makeGuess(x:Character){
+        guessed.append(x)
+        updateDisplay()
     }
     
     func updateDisplay(){
