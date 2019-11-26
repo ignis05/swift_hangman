@@ -51,12 +51,34 @@ class MainViewController: UIViewController,UIPickerViewDelegate, UIPickerViewDat
         
         pickerData = ["Item 1":["SubItem 1-1","SubItem 1-2" ],"Item 2":["SubItem 2-1","SubItem 2-2" ]]
         
-        self.picker1.delegate = self
-        self.picker1.dataSource = self
-        self.picker2.delegate = self
-        self.picker2.dataSource = self
-        // Do any additional setup after loading the view.
+       
+        
+        
+        let jsonUrl = "https://mendela.pl/json"
+        
+        let session = URLSession.shared
+        let shotsUrl = NSURL(string: jsonUrl)
+        
+        let task = session.dataTask(with: shotsUrl! as URL) {
+            (data, response, error) -> Void in
+            do {
+                let jsonData = try JSONSerialization.jsonObject(with: data!, options:JSONSerialization.ReadingOptions.mutableContainers ) as! NSDictionary
+                let dane = jsonData as! [String : [String]]
+                self.pickerData = dane
+                print(dane)
+                DispatchQueue.main.async {
+                    self.picker1.delegate = self
+                    self.picker1.dataSource = self
+                    self.picker2.delegate = self
+                    self.picker2.dataSource = self
+                }
+            } catch _ {
+                // Error
+            }
+        }
+        task.resume()
     }
+        // Do any additional setup after loading the view.
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dest = segue.destination as! ViewController2
