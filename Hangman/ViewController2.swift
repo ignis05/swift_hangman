@@ -21,6 +21,8 @@ class ViewController2: UIViewController,UITextFieldDelegate {
     
     var keyword = "TEST"
     var guessed:Array<Character> = []
+    var covered:Array<String> = []
+    var imgs:Array<UIButton>=[]
     
 
     override func viewDidLoad() {
@@ -53,9 +55,11 @@ class ViewController2: UIViewController,UITextFieldDelegate {
             let xd = (i-1) % 3
             let xdd = Int(floor(Double(i-1)/3))
             button.frame = CGRect(x:100 + 100*xd, y:300 + 100*xdd, width: 100, height: 100) // rozmiar i punkt wstwienia
-            button.tag = 12 //mozna dodac liczbowy tag
-            button.setBackgroundImage(img, for: UIControl.State.normal) // dodanie tła
+            button.tag = i
+            button.setBackgroundImage(img, for: UIControl.State.normal)
+            button.isEnabled = false
             self.view.addSubview(button) //dodanie buttona do widoku
+            imgs.append(button)
         }
     }
     
@@ -73,6 +77,26 @@ class ViewController2: UIViewController,UITextFieldDelegate {
     
     func makeGuess(x:Character){
         guessed.append(x)
+        
+        if(keyword.contains(x)){
+            
+        }
+        else {
+            if(covered.count < 6){
+                var rand:String = ""
+                while true{
+                    rand = "\(Int.random(in: 1...6))"
+                    print(rand)
+                    if(self.covered.contains(rand)){
+                    }else{
+                        break
+                    }
+                }
+                covered.append(rand)
+            }
+        }
+        
+        
         updateDisplay()
     }
     
@@ -88,6 +112,14 @@ class ViewController2: UIViewController,UITextFieldDelegate {
         }
         wordLabel.text = string
         wordLabel.sizeToFit()
+        for img in imgs{
+            if covered.contains("\(img.tag)"){
+                img.isEnabled = false
+            }
+            else {
+                img.isEnabled = true
+            }
+        }
     }
     
 
