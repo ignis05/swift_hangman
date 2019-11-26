@@ -86,6 +86,7 @@ class ViewController2: UIViewController,UITextFieldDelegate {
                 var rand:String = ""
                 while true{
                     rand = "\(Int.random(in: 1...6))"
+                    print("rand:")
                     print(rand)
                     if(self.covered.contains(rand)){
                     }else{
@@ -103,6 +104,9 @@ class ViewController2: UIViewController,UITextFieldDelegate {
     func updateDisplay(){
         if(covered.count >= 6){
             let alert = UIAlertController(title: "Alert", message: "Przegrana", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                self.navigationController?.popToRootViewController(animated: true)
+            }))
             self.present(alert, animated: true)
         }
         var string = ""
@@ -129,6 +133,9 @@ class ViewController2: UIViewController,UITextFieldDelegate {
         
         if(xddd == keyword.count){
             let alert = UIAlertController(title: "Alert", message: "Wygrana", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                    self.navigationController?.popToRootViewController(animated: true)
+            }))
             self.present(alert, animated: true)
         }
     }
