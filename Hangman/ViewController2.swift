@@ -101,10 +101,16 @@ class ViewController2: UIViewController,UITextFieldDelegate {
     }
     
     func updateDisplay(){
+        if(covered.count >= 6){
+            let alert = UIAlertController(title: "Alert", message: "Przegrana", preferredStyle: .alert)
+            self.present(alert, animated: true)
+        }
         var string = ""
+        var xddd = 0
         for char in keyword {
             if(guessed.contains(char)){
                 string += String(char) + " "
+                xddd = xddd + 1
             }
             else{
                 string += "_ "
@@ -119,6 +125,11 @@ class ViewController2: UIViewController,UITextFieldDelegate {
             else {
                 img.isEnabled = true
             }
+        }
+        
+        if(xddd == keyword.count){
+            let alert = UIAlertController(title: "Alert", message: "Wygrana", preferredStyle: .alert)
+            self.present(alert, animated: true)
         }
     }
     
