@@ -19,7 +19,7 @@ class ViewController2: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet var input: UITextField!
     
-    var keyword = "OKOŃ"
+    var keyword = "TEST"
     var guessed:Array<Character> = []
     
 
@@ -49,6 +49,9 @@ class ViewController2: UIViewController,UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {   //delegate method
         let x:String = textField.text!
         print(x)
+        if(x.count == 0){
+            return false
+        }
         makeGuess(x:Array(x.uppercased())[0])
         textField.deleteBackward()
         return false
@@ -63,10 +66,10 @@ class ViewController2: UIViewController,UITextFieldDelegate {
         var string = ""
         for char in keyword {
             if(guessed.contains(char)){
-                string += String(char)
+                string += String(char) + " "
             }
             else{
-                string += "_"
+                string += "_ "
             }
         }
         wordLabel.text = string

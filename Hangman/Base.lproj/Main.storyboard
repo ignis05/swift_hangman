@@ -81,15 +81,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fa-Pc-ZNY">
-                                <rect key="frame" x="47" y="103" width="71" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fa-Pc-ZNY">
+                                <rect key="frame" x="20" y="103" width="71" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Word" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doJ-EV-1ey">
-                                <rect key="frame" x="186.5" y="437.5" width="41" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="177" y="198" width="60" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -111,10 +111,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="doJ-EV-1ey" firstAttribute="top" secondItem="4bn-W3-ez1" secondAttribute="bottom" constant="20" id="2Uy-7j-fYj"/>
                             <constraint firstItem="4bn-W3-ez1" firstAttribute="leading" secondItem="W56-X8-cN4" secondAttribute="leading" id="7Gk-l0-NYU"/>
-                            <constraint firstItem="doJ-EV-1ey" firstAttribute="centerY" secondItem="uRy-mz-NkC" secondAttribute="centerY" id="86J-7G-Lu5"/>
+                            <constraint firstItem="6fa-Pc-ZNY" firstAttribute="leading" secondItem="W56-X8-cN4" secondAttribute="leading" constant="20" id="Idr-Tc-tyG"/>
+                            <constraint firstItem="doJ-EV-1ey" firstAttribute="centerX" secondItem="uRy-mz-NkC" secondAttribute="centerX" id="Mfw-Uq-id9"/>
                             <constraint firstItem="4bn-W3-ez1" firstAttribute="trailing" secondItem="W56-X8-cN4" secondAttribute="trailing" id="Nes-ab-1vk"/>
-                            <constraint firstItem="doJ-EV-1ey" firstAttribute="centerX" secondItem="uRy-mz-NkC" secondAttribute="centerX" id="Qh1-Th-8iD"/>
                             <constraint firstItem="4bn-W3-ez1" firstAttribute="top" secondItem="6fa-Pc-ZNY" secondAttribute="bottom" constant="10" id="tYt-Hq-lTK"/>
                             <constraint firstItem="6fa-Pc-ZNY" firstAttribute="top" secondItem="W56-X8-cN4" secondAttribute="top" constant="15" id="v6d-yA-fFK"/>
                         </constraints>
