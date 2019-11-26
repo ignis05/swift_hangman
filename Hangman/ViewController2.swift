@@ -43,7 +43,6 @@ class ViewController2: UIViewController,UITextFieldDelegate {
     
     // start typing textField to generate
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        print(string)
         textField.deleteBackward()
         return true
     }
@@ -66,7 +65,6 @@ class ViewController2: UIViewController,UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {   //delegate method
         let x:String = textField.text!
-        print(x)
         if(x.count == 0){
             return false
         }
@@ -86,9 +84,7 @@ class ViewController2: UIViewController,UITextFieldDelegate {
                 var rand:String = ""
                 while true{
                     rand = "\(Int.random(in: 1...6))"
-                    print("rand:")
-                    print(rand)
-                    if(self.covered.contains(rand)){
+                    if(covered.contains(rand)){
                     }else{
                         break
                     }
