@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController2: UIViewController {
+class ViewController2: UIViewController,UITextFieldDelegate {
     
     var selected1:Int!
     var selected2:Int!
@@ -17,6 +17,7 @@ class ViewController2: UIViewController {
     var subcat:String!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var wordLabel: UILabel!
+    @IBOutlet var input: UITextField!
     
     var keyword = "OKOŃ"
     var guessed:Array<Character> = []
@@ -31,9 +32,25 @@ class ViewController2: UIViewController {
         categoryLabel.text = cat + " - " + subcat!
         categoryLabel.sizeToFit()
         
-        
+        input.delegate = self
         updateDisplay()
         // Do any additional setup after loading the view.
+    }
+    
+    
+    // start typing textField to generate
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        print(string)
+        textField.deleteBackward()
+        return true
+    }
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {   //delegate method
+        let x:String = textField.text!
+        print(x)
+        textField.deleteBackward()
+        return false
     }
     
     func updateDisplay(){

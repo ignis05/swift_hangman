@@ -94,6 +94,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4bn-W3-ez1">
+                                <rect key="frame" x="0.0" y="137" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Sprawdz litere" id="uyy-rr-Em2"/>
+                                    <barButtonItem style="plain" id="5fo-NK-2bY">
+                                        <textField key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" id="qKj-z3-zcN">
+                                            <rect key="frame" x="140" y="7" width="97" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -104,6 +120,7 @@
                     </view>
                     <connections>
                         <outlet property="categoryLabel" destination="6fa-Pc-ZNY" id="FzQ-Ue-JI8"/>
+                        <outlet property="input" destination="qKj-z3-zcN" id="FrB-fx-KG7"/>
                         <outlet property="wordLabel" destination="doJ-EV-1ey" id="Pio-0f-wCX"/>
                     </connections>
                 </viewController>
